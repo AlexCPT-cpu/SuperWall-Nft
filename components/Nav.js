@@ -19,20 +19,16 @@ import {
 } from "@heroicons/react/24/outline/";
 import Link from "next/link";
 import { Navbar, Button, Text } from "@nextui-org/react";
+import { useState } from "react";
 
 const NavBar = ({ mint }) => {
+
+  const[openModal, setOpenModal] = useState(false)
+
   if (process.browser) {
     var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn")
-
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-    btn.onclick = function() {
-      modal.style.display = "block";
-    }
-
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
@@ -81,6 +77,10 @@ const NavBar = ({ mint }) => {
       imline: "nearest",
     });
   };
+
+  const handleModal = () => {
+    setOpenModal(!openModal)
+  }
 
   return (
 <>
@@ -162,15 +162,15 @@ const NavBar = ({ mint }) => {
             <Navbar.Content>
             {isConnected ? (
             <button
-              className="w-full rounded-xl bg-gradient-to-b from-pink-600 to-purple-600 font-bold cursor-pointer text-white p-2 m-4"
-              id="myBtn"
+              className="w-full rounded-xl bg-gradient-to-b from-pink-600 to-purple-600 font-bold cursor-pointer   text-white p-2 m-4"
+              id="myBtn" onClick={handleModal}
             >
               {ensName ?? truncateEthAddress(address)}
             </button>
           ) : (
             <button
-              className="w-full rounded-xl bg-gradient-to-b from-pink-600 to-purple-600 font-bold cursor-pointer text-white p-2 m-4"
-              id="myBtn"
+              className="w-full rounded-xl bg-gradient-to-b from-pink-600 to-purple-600 font-bold cursor-pointer   text-white p-2 m-4"
+              id="myBtn" onClick={handleModal}
             >
               Connect Wallet
             </button>
@@ -272,7 +272,7 @@ const NavBar = ({ mint }) => {
           </Navbar>
 
 {isConnected ? (
-            <div id="myModal" className="connected-modal relative">
+            <div style={{display: openModal ? 'inline' : 'none'}} id="myModal" className="connected-modal relative">
               <div className="connected-modal-content md:w-6/12 md:h-56">
                 <div className="connected-module">
                   <span className="close">&times;</span>
@@ -313,7 +313,7 @@ const NavBar = ({ mint }) => {
                     </a>
                   </div>
                   <button
-                    className="w-lg md:w-auto md:top-40 md:left-44 absolute top-40 left-24 rounded-xl bg-gradient-to-b from-pink-600 to-purple-600 font-bold cursor-pointer hover:animate-pulse text-white p-2 m-4"
+                    className="w-lg md:w-auto md:top-40 md:left-44 absolute top-40 left-24 rounded-xl bg-gradient-to-b from-pink-600 to-purple-600 font-bold cursor-pointer   text-white p-2 m-4"
                     onClick={disconnect}
                   >
                     Disconnect
@@ -322,7 +322,7 @@ const NavBar = ({ mint }) => {
               </div>
             </div>
           ) : (
-            <div id="myModal" className="modal relative">
+            <div style={{display: openModal ? 'inline' : 'none'}} id="myModal" className="modal relative">
               <div className="modal-content">
                 <div className="module">
                   <span className="close">&times;</span>
