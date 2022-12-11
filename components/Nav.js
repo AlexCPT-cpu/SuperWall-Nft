@@ -30,7 +30,7 @@ const NavBar = ({ mint }) => {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     btn.onclick = function() {
-      modal.style.display ='block'
+      modal.style.display = "block";
     }
 
 
