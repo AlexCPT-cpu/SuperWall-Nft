@@ -31,7 +31,7 @@ const Mint = () => {
         <div className='flex flex-row space-x-4 m-5 justify-center'>
         <a href=''><Image className='w-4 md:w-6 text-center items-center' src='/etherscan.png' width={50} height={50} /></a>
         <a href=''><Image className='w-4 md:w-6 text-center items-center' src='/Opensea.png' width={50} height={50} /></a>
-        <a href='https://twitter.com/superwallglobal><Image className='w-4 md:w-6 text-center items-center' src='/twit.png' width={50} height={50} /></a>
+        <a href='https://twitter.com/superwallglobal'><Image className='w-4 md:w-6 text-center items-center' src='/twit.png' width={50} height={50} /></a>
         <a href='/'><Image className='w-4 md:w-6 text-center items-center' src='/Vectorweb.png' width={50} height={50} /></a>
         </div>
         </div>
