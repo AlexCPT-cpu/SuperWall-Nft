@@ -331,7 +331,7 @@ const NavBar = ({ mint }) => {
                       Connect
                     </p>
                     <div className="flex ml-3 space-y-2 items-center text-center mt-2 flex-col md:mt-10 md:flex-row md:justify-between">
-                      <div className=" hover:bg-blue-500 rounded-xl">
+                      <div className="rounded-xl">
                         <Image
                         className="w-24 md:mt-5 cursor-pointer"
                         src="/Walletconnect.png"
@@ -340,7 +340,7 @@ const NavBar = ({ mint }) => {
                         height={50}
                       />
                         </div>
-                      <div className="relative hover:bg-blue-500 rounded-xl cursor-pointer">
+                      <div className="relative rounded-xl cursor-pointer">
                         <Image
                           className="w-24"
                           src="/Highlight Wallet.png"
@@ -359,7 +359,7 @@ const NavBar = ({ mint }) => {
                           MetaMask
                         </p>
                       </div>
-                      <div className="hover:bg-blue-500 rounded-xl">
+                      <div className="rounded-xl">
                          <Image
                         className="w-18 cursor-pointer"
                         src="/Coinbase.png"
